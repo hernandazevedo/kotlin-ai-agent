@@ -1,19 +1,21 @@
 # Example Project
 
-Este é um projeto de exemplo para testar o agente de IA.
+![Demo](../assets/screen1.gif)
 
-## Tarefas de Exemplo
+This is an example project to test the AI agent.
 
-Você pode testar o agente com as seguintes tarefas:
+## Example Tasks
 
-1. "Adicione uma função multiply à classe Calculator"
-2. "Adicione uma função divide à classe Calculator com verificação de divisão por zero"
-3. "Adicione documentação KDoc a todos os métodos da classe Calculator"
+You can test the agent with the following tasks:
 
-## Como Testar
+1. "Add a multiply function to the Calculator class"
+2. "Add a divide function to the Calculator class with zero division check"
+3. "Add KDoc documentation to all methods of the Calculator class"
+
+## How to Test
 
 ```bash
 cd /Users/hernand.azevedo/agents
-export OPENAI_API_KEY="sua-chave-aqui"
-./gradlew run --args="example-project 'Adicione uma função multiply à classe Calculator'"
+export OPENAI_API_KEY="your-key-here"
+./gradlew run --args="example-project 'Add a multiply function to the Calculator class'"
 ```

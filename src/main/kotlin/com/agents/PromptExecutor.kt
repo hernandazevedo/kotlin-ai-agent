@@ -96,6 +96,7 @@ class OpenAIExecutor(private val apiKey: String, private val model: String = "gp
                         )
                     )
                 }))
+                addProperty("parallel_tool_calls", false)
             }
         }
         return gson.toJson(request)

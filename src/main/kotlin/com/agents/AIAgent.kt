@@ -51,7 +51,8 @@ class AIAgent(
                             Message(
                                 role = "tool",
                                 content = errorMsg,
-                                tool_call_id = result.id
+                                tool_call_id = result.id,
+                                name = result.toolName
                             )
                         )
                         continue
@@ -74,7 +75,8 @@ class AIAgent(
                         Message(
                             role = "tool",
                             content = resultMessage,
-                            tool_call_id = result.id
+                            tool_call_id = result.id,
+                            name = result.toolName
                         )
                     )
 
