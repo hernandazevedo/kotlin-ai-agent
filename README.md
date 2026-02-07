@@ -37,7 +37,7 @@ A minimalist AI agent that can explore, read, modify code, and perform Git opera
 - JDK 17 or higher
 - Gradle
 - OpenAI API Key
-- (Optional) MCP Git Server running for Git operations
+- (Optional) [MCP Git Server](https://github.com/hernandazevedo/mcp-git-server) running for Git operations
 
 ## Setup
 
@@ -54,10 +54,20 @@ export OPENAI_API_KEY="your-api-key-here"
 ```
 
 4. (Optional) Start the MCP Git Server for Git operations:
+
+First, clone and setup the [MCP Git Server](https://github.com/hernandazevedo/mcp-git-server):
+```bash
+git clone https://github.com/hernandazevedo/mcp-git-server.git
+cd mcp-git-server
+chmod +x mcp-git-server.sh
+```
+
+Then start the server:
 ```bash
 # In a separate terminal
-cd /path/to/mcp-git-server
 ./gradlew run
+# or
+./mcp-git-server.sh http
 ```
 
 The MCP server will start on `http://localhost:8080` by default.
@@ -172,3 +182,4 @@ This project implements **Option 3: Full MCP Client Integration**, which:
 
 - Based on the article: [Building AI Agents in Kotlin - Part 1: A Minimal Coding Agent](https://blog.jetbrains.com/ai/2025/11/building-ai-agents-in-kotlin-part-1-a-minimal-coding-agent/)
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/)
+- [MCP Git Server](https://github.com/hernandazevedo/mcp-git-server) - The MCP server used for Git operations integration
