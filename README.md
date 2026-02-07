@@ -1,93 +1,95 @@
 # Kotlin AI Agent
 
-Um agente de IA minimalista que pode explorar, ler e modificar código, construído em Kotlin seguindo o tutorial do JetBrains.
+![Demo](assets/screen1.gif)
 
-## Características
+A minimalist AI agent that can explore, read, and modify code, built in Kotlin following the JetBrains tutorial.
 
-- **Exploração de Projetos**: Lista diretórios e arquivos
-- **Leitura de Código**: Lê e analisa arquivos
-- **Edição de Código**: Modifica arquivos baseado em tarefas
-- **Integração OpenAI**: Usa GPT-4 para tomada de decisões inteligentes
+## Features
 
-## Ferramentas Disponíveis
+- **Project Exploration**: Lists directories and files
+- **Code Reading**: Reads and analyzes files
+- **Code Editing**: Modifies files based on tasks
+- **OpenAI Integration**: Uses GPT-4 for intelligent decision-making
 
-1. **ListDirectoryTool**: Lista todos os arquivos e diretórios em um caminho
-2. **ReadFileTool**: Lê o conteúdo de arquivos
-3. **EditFileTool**: Modifica arquivos substituindo seu conteúdo
-4. **CreateFileTool**: Cria novos arquivos com conteúdo especificado
+## Available Tools
 
-## Pré-requisitos
+1. **ListDirectoryTool**: Lists all files and directories in a path
+2. **ReadFileTool**: Reads file contents
+3. **EditFileTool**: Modifies files by replacing their content
+4. **CreateFileTool**: Creates new files with specified content
 
-- JDK 17 ou superior
+## Prerequisites
+
+- JDK 17 or higher
 - Gradle
-- Chave de API da OpenAI
+- OpenAI API Key
 
-## Configuração
+## Setup
 
-1. Clone o repositório ou crie o projeto
+1. Clone the repository or create the project
 
-2. Configure sua chave de API da OpenAI:
+2. Configure your OpenAI API key:
 ```bash
-export OPENAI_API_KEY="sua-chave-api-aqui"
+export OPENAI_API_KEY="your-api-key-here"
 ```
 
-3. Compile o projeto:
+3. Build the project:
 ```bash
 ./gradlew build
 ```
 
-## Uso
+## Usage
 
-Execute o agente fornecendo o caminho do projeto e a tarefa:
-
-```bash
-./gradlew run --args="/path/to/project 'Sua tarefa aqui'"
-```
-
-### Exemplos
+Run the agent by providing the project path and task:
 
 ```bash
-# Adicionar uma nova função
-./gradlew run --args="/Users/nome/meu-projeto 'Adicione uma função para calcular números de Fibonacci'"
-
-# Refatorar código
-./gradlew run --args="/Users/nome/meu-projeto 'Refatore a classe UserService para usar injeção de dependência'"
-
-# Corrigir bugs
-./gradlew run --args="/Users/nome/meu-projeto 'Corrija o bug no método de autenticação'"
+./gradlew run --args="/path/to/project 'Your task here'"
 ```
 
-## Arquitetura
+### Examples
 
-### Componentes Principais
+```bash
+# Add a new function
+./gradlew run --args="/Users/username/my-project 'Add a function to calculate Fibonacci numbers'"
 
-- **AIAgent**: Orquestra o loop principal de execução
-- **PromptExecutor**: Interface com a API da OpenAI
-- **ToolRegistry**: Gerencia as ferramentas disponíveis
-- **FileSystemProvider**: Abstração para operações de sistema de arquivos
-- **Strategy**: Define quando o agente deve continuar ou parar
+# Refactor code
+./gradlew run --args="/Users/username/my-project 'Refactor the UserService class to use dependency injection'"
 
-### Fluxo de Execução
+# Fix bugs
+./gradlew run --args="/Users/username/my-project 'Fix the bug in the authentication method'"
+```
 
-1. O agente recebe uma tarefa e o caminho do projeto
-2. Explora o projeto usando `list_directory`
-3. Lê arquivos relevantes com `read_file`
-4. Faz modificações necessárias via `edit_file`
-5. Retorna um resumo das mudanças realizadas
+## Architecture
 
-## Limitações
+### Main Components
 
-- Máximo de 100 iterações por padrão
-- Requer chave de API da OpenAI válida
-- Operações de escrita exigem `FileSystemProvider.ReadWrite`
+- **AIAgent**: Orchestrates the main execution loop
+- **PromptExecutor**: Interfaces with the OpenAI API
+- **ToolRegistry**: Manages available tools
+- **FileSystemProvider**: Abstraction for file system operations
+- **Strategy**: Defines when the agent should continue or stop
 
-## Próximos Passos
+### Execution Flow
 
-- Adicionar verificação de código
-- Implementar execução de shell
-- Melhorar tratamento de erros
-- Adicionar suporte para mais LLMs
+1. The agent receives a task and the project path
+2. Explores the project using `list_directory`
+3. Reads relevant files with `read_file`
+4. Makes necessary modifications via `edit_file`
+5. Returns a summary of the changes made
 
-## Referências
+## Limitations
 
-Baseado no artigo: [Building AI Agents in Kotlin - Part 1: A Minimal Coding Agent](https://blog.jetbrains.com/ai/2025/11/building-ai-agents-in-kotlin-part-1-a-minimal-coding-agent/)
+- Maximum of 100 iterations by default
+- Requires a valid OpenAI API key
+- Write operations require `FileSystemProvider.ReadWrite`
+
+## Next Steps
+
+- Add code verification
+- Implement shell execution
+- Improve error handling
+- Add support for more LLMs
+
+## References
+
+Based on the article: [Building AI Agents in Kotlin - Part 1: A Minimal Coding Agent](https://blog.jetbrains.com/ai/2025/11/building-ai-agents-in-kotlin-part-1-a-minimal-coding-agent/)

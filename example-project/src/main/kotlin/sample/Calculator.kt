@@ -13,4 +13,10 @@ class Calculator {
         if (b == 0) throw IllegalArgumentException("Cannot divide by zero.")
         return a / b
     }
+
+    fun multiply(a: Int, b: Int): Int {
+        return a * b
+    }
 }
+
+//./gradlew run --args="'/Users/hernand.azevedo/agents/example-project' 'Add a multiply function to the Calcultor class'"
